@@ -21,7 +21,7 @@ All problems solved are from [HackerRank](https://www.hackerrank.com/) unless st
 All problems are stored as individual `.rs` files under a flat structure. Filenames are based on the problem name:
 
 ```
-problems/
+src/solutions/
 ├── sum.rs
 ├── sum_array.rs
 └── ...
@@ -92,7 +92,7 @@ This is a personal learning project, but contributions are welcome — especiall
 * Runtime/memory profiling tools
 * CLI polish
 
-No leetcode-flexing, no verbosity, no framework bloat.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines, including how to add new problems and CLI hooks.
 
 ---
 
