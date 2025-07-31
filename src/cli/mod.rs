@@ -1,5 +1,3 @@
-use std::process;
-
 use clap::Parser;
 
 use crate::runner;
@@ -9,18 +7,11 @@ use crate::runner;
 struct Cli {
     /// Specify the problem to run.
     #[arg(short, long)]
-    problem: Option<String>,
+    problem: String,
 }
 
 pub fn run() {
     let cli = Cli::parse();
-    let problem = match cli.problem {
-        Some(problem) => problem,
-        None => {
-            println!("Problem cannot be empty");
-            process::exit(1)
-        }
-    };
-
+    let problem = cli.problem;
     runner::run_solution(problem);
 }
