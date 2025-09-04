@@ -25,8 +25,8 @@ pub fn run() {
     let cli = Cli::parse();
     let problem = match cli.command {
         Commands::CompareTriplets {} => "compare_triplets",
-        Commands::Sum {  } => "sum",
-        Commands::SumArray {  } => "sum",
+        Commands::Sum {} => "sum",
+        Commands::SumArray {} => "sum",
     };
 
     runner::run_solution(problem);
