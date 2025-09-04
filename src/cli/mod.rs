@@ -1,6 +1,6 @@
 use std::process;
 
-use clap::Parser;
+use clap::{Parser, Subcommand};
 
 use crate::runner;
 
@@ -8,18 +8,25 @@ use crate::runner;
 #[command(version, about, long_about = None)]
 struct Cli {
     /// Specify the problem to run.
-    #[arg(short, long)]
-    problem: Option<String>,
+    #[command(subcommand)]
+    command: Commands,
+}
+
+#[derive(Debug, Subcommand)]
+enum Commands {
+    CompareTriplets {},
+
+    Sum {},
+
+    SumArray {},
 }
 
 pub fn run() {
     let cli = Cli::parse();
-    let problem = match cli.problem {
-        Some(problem) => problem,
-        None => {
-            println!("Problem cannot be empty");
-            process::exit(1)
-        }
+    let problem = match cli.command {
+        Commands::CompareTriplets {} => "compare_triplets",
+        Commands::Sum {  } => "sum",
+        Commands::SumArray {  } => "sum",
     };
 
     runner::run_solution(problem);

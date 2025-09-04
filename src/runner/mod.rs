@@ -12,8 +12,8 @@ fn get_problem_hashmap() -> std::collections::HashMap<String, fn()> {
     map
 }
 
-pub fn run_solution(problem: String) {
-    match get_problem_hashmap().get(&problem) {
+pub fn run_solution(problem: &str) {
+    match get_problem_hashmap().get(problem) {
         Some(solution) => solution(),
         None => {
             eprintln!("Invalid problem.");
