@@ -46,7 +46,7 @@ pub fn run(alice: Option<Vec<i32>>, bob: Option<Vec<i32>>) {
 /// # Returns
 ///
 /// A 2-element array: `[alice_score, bob_score]`
-pub fn compare_triplets(a: &[i32], b: &[i32]) -> Vec<i32> {
+fn compare_triplets(a: &[i32], b: &[i32]) -> Vec<i32> {
     let mut result = Vec::new();
     let mut alice = 0;
     let mut bob = 0;

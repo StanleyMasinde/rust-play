@@ -37,7 +37,7 @@ pub fn run(input: Option<Vec<i32>>) {
 ///
 /// # Explanation
 /// The sum of the array elements is 1 + 2 + 3 + 4 + 10 + 11 = 31.
-pub fn sum_array(array: &[i32]) -> i32 {
+fn sum_array(array: &[i32]) -> i32 {
     array.iter().sum()
 }
 
