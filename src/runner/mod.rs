@@ -5,7 +5,6 @@ use crate::solutions;
 fn get_problem_hashmap() -> std::collections::HashMap<String, fn()> {
     let mut map: HashMap<String, fn()> = HashMap::new();
 
-    map.insert("sum".to_string(), solutions::sum::run);
     map.insert("sum_array".to_string(), solutions::sum_array::run);
     map.insert("compare_triplets".to_string(), solutions::compare_triplets::run);
 

@@ -1,5 +1,5 @@
-pub fn run() {
-    println!("Input 10, -50 Output: {}", sum(10, -50));
+pub fn run(a: Option<i32>, b: Option<i32>) {
+    println!("{}", sum(a.unwrap_or(10), b.unwrap_or(20)));
 }
 
 /// Complete the `sum` function to compute the sum of two integers.
