@@ -1,5 +1,4 @@
 mod cli;
-mod runner;
 mod solutions;
 
 fn main() {

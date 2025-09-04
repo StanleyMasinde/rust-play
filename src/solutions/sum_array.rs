@@ -1,6 +1,11 @@
-pub fn run() {
-    println!("Input [1, 2, 3, 4, 10, 11]");
-    println!("Output: {}", sum_array(&[1, 2, 3, 4, 10, 11]))
+pub fn run(input: Option<Vec<i32>>) {
+    let input_array = match input {
+        Some(array) => array,
+        None => [1, 2, 3, 4, 10, 11].into(),
+    };
+
+    println!("Input {:?}", &input_array);
+    println!("Output: {}", sum_array(&input_array))
 }
 
 /// Given an array of integers, find the sum of its elements.

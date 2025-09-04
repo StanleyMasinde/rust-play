@@ -1,6 +1,13 @@
-pub fn run() {
-    let a = [5, 6, 7];
-    let b = [3, 6, 10];
+pub fn run(alice: Option<Vec<i32>>, bob: Option<Vec<i32>>) {
+    let a = match alice {
+        Some(array) => array,
+        None => [5, 6, 7].into(),
+    };
+
+    let b = match bob {
+        Some(array) => array,
+        None => [3, 6, 10].into(),
+    };
 
     let output = compare_triplets(&a, &b);
     println!("Input: {a:?}\n{b:?}");
