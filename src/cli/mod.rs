@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 
-use crate::solutions::{self, compare_triplets, sum_array};
+use crate::solutions::{self, compare_triplets, diagonal_difference, sum_array};
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -33,6 +33,8 @@ enum Commands {
         #[arg(long, num_args = 1.., allow_hyphen_values = true)]
         input: Option<Vec<i32>>,
     },
+
+    DiagonalDifference {},
 }
 
 pub fn run() {
@@ -50,5 +52,6 @@ pub fn run() {
             None => solutions::sum::run(None, None),
         },
         Commands::SumArray { input } => sum_array::run(input),
+        Commands::DiagonalDifference {} => diagonal_difference::run(),
     };
 }
