@@ -12,15 +12,15 @@ pub fn run(input: Vec<i32>) {
 /// The tallest candles are 4 units high. There are 2 candles with this height, so the function should return 2.
 /// # Function Description
 /// Complete the function *birthday_cake_candles*  with the following parameter(s):
-/// - int *candles[n]*: the candle heights
+/// - int *candles[\n]\*: the candle heights
 /// ## Returns
 /// - int: the number of candles that are tallest
 /// ## Input Format
 /// The first line contains a single integer, _n_, the size of _candles[]_.
-/// The second line contains _n_ space-separated integers, where each integer _i_ describes the height of _candles[i]_.
+/// The second line contains _n_ space-separated integers, where each integer _i_ describes the height of _candles\[i]\_.
 /// ## Constraints
 /// - 1 <= n <= 10^5
-/// - i <= candles[i] <= 10^7
+/// - i <= candles\[i] <= 10^7
 /// ### Sample Input 0
 /// ```
 /// 4

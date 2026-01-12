@@ -24,12 +24,11 @@ pub fn run(alice: Option<Vec<i32>>, bob: Option<Vec<i32>>) {
 /// and the rating for Bob's challenge is `b = (b[0], b[1], b[2])`.
 ///
 /// The task is to calculate their comparison points by comparing each category:
-/// - If a[i] > b[i], Alice gets 1 point.
-/// - If a[i] < b[i], Bob gets 1 point.
-/// - If a[i] == b[i], no one scores.
+/// - If a\[i] > b\[i], Alice gets 1 point.
+/// - If a\[i] < b\[i], Bob gets 1 point.
+/// - If a\[i] == b\[i], no one scores.
 ///
 /// # Arguments
-///
 /// * `a` - Alice's scores: clarity, originality, difficulty
 /// * `b` - Bob's scores: clarity, originality, difficulty
 ///
@@ -42,7 +41,7 @@ pub fn run(alice: Option<Vec<i32>>, bob: Option<Vec<i32>>) {
 /// Basic comparison where Alice wins 2 categories:
 ///
 /// ```
-/// # use solutions::compare_triplets::compare_triplets;
+/// use solutions::compare_triplets::compare_triplets;
 /// let a = [5, 6, 7];
 /// let b = [3, 6, 10];
 /// assert_eq!(compare_triplets(&a, &b), vec![1, 1]);
@@ -53,7 +52,7 @@ pub fn run(alice: Option<Vec<i32>>, bob: Option<Vec<i32>>) {
 /// Alice wins clarity and difficulty:
 ///
 /// ```
-/// # use solutions::compare_triplets::compare_triplets;
+/// use solutions::compare_triplets::compare_triplets;
 /// let a = [17, 28, 30];
 /// let b = [99, 16, 8];
 /// assert_eq!(compare_triplets(&a, &b), vec![2, 1]);
@@ -78,8 +77,8 @@ pub fn run(alice: Option<Vec<i32>>, bob: Option<Vec<i32>>) {
 /// let a = [100, 100, 100];
 /// let b = [1, 1, 1];
 /// assert_eq!(compare_triplets(&a, &b), vec![3, 0]);
-/// // Alice wins all three categories
 /// ```
+/// // Alice wins all three categories
 fn compare_triplets(a: &[i32], b: &[i32]) -> Vec<i32> {
     let mut result = Vec::new();
     let mut alice = 0;
