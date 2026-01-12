@@ -1,6 +1,8 @@
 use clap::{Parser, Subcommand};
 
-use crate::solutions::{self, compare_triplets, diagonal_difference, min_max_sum, sum_array};
+use crate::solutions::{
+    self, birthday_cake_candles, compare_triplets, diagonal_difference, min_max_sum, sum_array,
+};
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -41,6 +43,12 @@ enum Commands {
         #[arg(long, num_args = 5, value_delimiter = ' ', default_values_t = vec![1, 2, 3, 4, 5])]
         input: Vec<i64>,
     },
+
+    BirthdayCakeCandles {
+        /// An array of candles e.g 4, 4, 1, 3
+        #[arg(long, value_delimiter = ' ', num_args = 1.., default_values_t = vec![4, 4, 1, 3])]
+        input: Vec<i32>,
+    },
 }
 
 pub fn run() {
@@ -60,5 +68,6 @@ pub fn run() {
         Commands::SumArray { input } => sum_array::run(input),
         Commands::DiagonalDifference {} => diagonal_difference::run(),
         Commands::MinMaxSum { input } => min_max_sum::run(&input),
+        Commands::BirthdayCakeCandles { input } => birthday_cake_candles::run(input),
     };
 }
