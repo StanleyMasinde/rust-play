@@ -2,6 +2,7 @@ use clap::{Parser, Subcommand};
 
 use crate::solutions::{
     self, birthday_cake_candles, compare_triplets, diagonal_difference, min_max_sum, sum_array,
+    time_conversion,
 };
 
 #[derive(Parser)]
@@ -49,6 +50,12 @@ enum Commands {
         #[arg(long, value_delimiter = ' ', num_args = 1.., default_values_t = vec![4, 4, 1, 3])]
         input: Vec<i32>,
     },
+
+    TimeConversion {
+        /// A 12 hour time string. Example 07:33:43PM
+        #[arg(long, default_value = "07:33:43PM")]
+        input: String,
+    },
 }
 
 pub fn run() {
@@ -69,5 +76,6 @@ pub fn run() {
         Commands::DiagonalDifference {} => diagonal_difference::run(),
         Commands::MinMaxSum { input } => min_max_sum::run(&input),
         Commands::BirthdayCakeCandles { input } => birthday_cake_candles::run(input),
+        Commands::TimeConversion { input } => time_conversion::run(&input),
     };
 }
