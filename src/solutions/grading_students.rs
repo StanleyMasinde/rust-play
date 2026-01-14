@@ -18,7 +18,7 @@ pub fn run(input: &[i32]) {
 /// Given the initial value of *grade* for each of Sam's *n* students, write code to automate the rounding process.
 /// # Function Description
 /// Complete the function  with the following parameter(s):
-/// - int grades[n]: the grades before rounding
+/// - int grades\[n\]: the grades before rounding
 /// # Returns
 /// - int[n]: the grades after rounding
 /// # Input Format
@@ -26,7 +26,7 @@ pub fn run(input: &[i32]) {
 /// Each line *i* of the *n* subsequent lines contains a single integer, .
 /// # Constraints
 /// - 1 <= n <= 60
-/// - 0 <= grades[i] <= 100
+/// - 0 <= grades\[i\] <= 100
 ///
 /// # Sample Input 0
 /// ```
