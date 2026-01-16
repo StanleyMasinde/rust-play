@@ -6,3 +6,4 @@ pub mod sum;
 pub mod sum_array;
 pub(crate) mod time_conversion;
 pub(crate) mod grading_students;
+pub(crate) mod extra_long_factorial;
