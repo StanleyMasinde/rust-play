@@ -2,7 +2,7 @@ use clap::{Parser, Subcommand};
 
 use crate::solutions::{
     self, birthday_cake_candles, compare_triplets, diagonal_difference, extra_long_factorial,
-    grading_students, min_max_sum, sum_array, time_conversion,
+    forming_magic_square, grading_students, min_max_sum, sum_array, time_conversion,
 };
 
 #[derive(Parser)]
@@ -68,6 +68,12 @@ enum Commands {
         #[arg(long, default_value = "20")]
         input: i32,
     },
+
+    FormingMagicSquare {
+        /// A 3x3 matrix (9 comma-separated numbers in row-major order)
+        #[arg(long, value_delimiter = ',', default_values_t = vec![3, 7, 6, 9, 5, 1, 4, 3, 8], num_args = 9)]
+        input: Vec<i32>,
+    },
 }
 
 pub fn run() {
@@ -91,5 +97,10 @@ pub fn run() {
         Commands::TimeConversion { input } => time_conversion::run(&input),
         Commands::GradingStudents { input } => grading_students::run(&input),
         Commands::ExtraLongFactorial { input } => extra_long_factorial::run(input),
+        Commands::FormingMagicSquare { input } => {
+            let matrix: Vec<Vec<i32>> = input.chunks(3).map(|chunk| chunk.to_vec()).collect();
+
+            forming_magic_square::run(&matrix);
+        }
     };
 }

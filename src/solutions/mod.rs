@@ -1,9 +1,10 @@
 pub(crate) mod birthday_cake_candles;
 pub mod compare_triplets;
 pub mod diagonal_difference;
+pub(crate) mod extra_long_factorial;
+pub(crate) mod forming_magic_square;
+pub(crate) mod grading_students;
 pub(crate) mod min_max_sum;
 pub mod sum;
 pub mod sum_array;
 pub(crate) mod time_conversion;
-pub(crate) mod grading_students;
-pub(crate) mod extra_long_factorial;
