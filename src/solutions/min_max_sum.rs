@@ -79,8 +79,7 @@ fn mini_max_sum(arr: &[i64]) -> (i64, i64) {
     let mut all_sums: Vec<i64> = Vec::with_capacity(5);
     let total_array_sum = arr.iter().sum::<i64>();
 
-    for i in 0..5 {
-        let value_to_remove = arr[i];
+    for value_to_remove in arr.iter().take(5) {
         let current_total = total_array_sum - value_to_remove;
         all_sums.push(current_total);
     }

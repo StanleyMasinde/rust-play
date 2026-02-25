@@ -65,8 +65,7 @@ fn diagonal_difference(arr: &[Vec<i32>]) -> i32 {
     let marix_rows = arr.len();
     let last_index = marix_rows - 1;
 
-    for index in 0..marix_rows {
-        let current_vec = &arr[index];
+    for (index, current_vec) in arr.iter().enumerate().take(marix_rows) {
         let first_diag_pos = index;
         diagonal_one_sum += current_vec[first_diag_pos];
         let second_diag_pos = last_index - first_diag_pos;

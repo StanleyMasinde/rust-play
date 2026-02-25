@@ -9,24 +9,30 @@ pub fn run(time: &str) {
 /// Given a time in *12*-hour AM/PM format, convert it to military (24-hour) time.
 /// Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
 /// - 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
-/// Example
+/// ### Example
 /// _s = '12:01:00PM'_
 /// Return '12:01:00'.
 /// _s = '12:01:00AM'_
 /// Return '00:01:00'.
-/// Function Description
+///
+/// ## Function Description
 /// Complete the time_conversion function with the following parameter(s):
-/// - string s: a time in 12 hour format
+///   - string s: a time in 12 hour format
+///
 /// Returns
-/// - string: the time in 24 hour format
-/// Input Format
-/// A single string _s_ that represents a time in _12_-hour clock format (i.e.:*hh:mm:ssAM*  or *hh:mm:ssPM*).
-/// Constraints
-/// All input times are valid
-/// Sample Input 0
-/// 07:05:45PM
-/// Sample Output 0
-/// 19:05:45
+///   - string: the time in 24 hour format
+///
+/// ## Input Format
+///   A single string _s_ that represents a time in _12_-hour clock format (i.e.:*hh:mm:ssAM*  or *hh:mm:ssPM*).
+///
+/// ## Constraints
+///   All input times are valid
+///
+/// ## Sample Input 0
+///   07:05:45PM
+///
+/// ## Sample Output 0
+///   19:05:45
 fn time_conversion(time: &str) -> String {
     let portions: Vec<&str> = time.split(":").collect();
     if let [hours, minutes, seconds_day_half] = portions.as_slice() {

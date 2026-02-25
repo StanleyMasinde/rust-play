@@ -14,8 +14,10 @@ pub fn run(input: i32) {
 /// # Function Description
 /// Complete the *extra_long_factorials* function in the editor below. It should print the result and return.
 /// *extra_long_factorials* has the following parameter(s):
-/// - n: an integer
+///   - n: an integer
+///
 /// *Note:* Factorials of *n > 20* can't be stored even in a  long long variable. Big integers must be used for such calculations. Languages like Java, Python, Ruby etc. can handle big integers, but we need to write additional code in C/C++ to handle huge values.
+///
 /// We recommend solving this challenge using BigIntegers.
 /// # Input Format
 /// Input consists of a single integer
@@ -53,10 +55,11 @@ fn extra_long_factorial(n: &i32) -> String {
     }
 
     digits
-            .iter()
-            .rev()
-            .map(|d| char::from(b'0' + d))
-            .collect::<String>().to_string()
+        .iter()
+        .rev()
+        .map(|d| char::from(b'0' + d))
+        .collect::<String>()
+        .to_string()
 }
 
 #[cfg(test)]
