@@ -37,7 +37,7 @@ pub fn run(input: i32) {
 /// ```
 fn extra_long_factorial(n: &i32) -> String {
     let mut digits = vec![1u8];
-    let upper_limit = n.clone();
+    let upper_limit = *n;
 
     for k in 2..=upper_limit {
         let mut carry = 0;
@@ -52,14 +52,11 @@ fn extra_long_factorial(n: &i32) -> String {
         }
     }
 
-    format!(
-        "{}",
-        digits
+    digits
             .iter()
             .rev()
             .map(|d| char::from(b'0' + d))
-            .collect::<String>()
-    )
+            .collect::<String>().to_string()
 }
 
 #[cfg(test)]
