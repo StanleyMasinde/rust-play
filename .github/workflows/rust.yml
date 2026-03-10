@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Run tests
       run: cargo test
- tweet:
+  tweet:
     runs-on: ubuntu-latest
 
     steps:
