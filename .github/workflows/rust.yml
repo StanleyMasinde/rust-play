@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Publish tweet
-        uses: StanleyMasinde/twitter-action@v1
+        uses: StanleyMasinde/twitter-action@v1.0.0
         with:
           body: "Testing Twitter CLI from GH Actions."
           twitter_version: latest
